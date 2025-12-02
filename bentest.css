@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+:root {
+	--success-color: rgb(114, 197, 118);
+	--error-color:  rgb(238, 68, 38);
+	--info-color: rgb(29, 133, 218);
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: antiquewhite;
+}
+.option {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.btn {
+	padding: 4px 8px ;	
+	border-radius: 12px;
+	outline: none;
+	border: none;
+	color: #fff;
+	min-width: 60px;
+	cursor: pointer;
+}
+#toast {
+	position: fixed;
+	top: 20px;
+	right: 10px;
+}
+.toast-container {
+	margin-top: 10px;;
+}
+.toast-block {
+	min-width: 300px;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	gap: 10px;
+	padding: 10px;
+	position: relative;
+	animation: slideIn 0.5s linear forwards
+}
+.toast-block h2 {
+	font-size: 14px;
+}
+.toast-block span {
+	display: block;
+	font-size: 12px;
+}
+.toast-block .toast-icon {
+	font-size: 22px;
+}
+.toast-block.success h2,
+.toast-block.success .toast-icon {
+	color: var(--success-color)
+}
+.toast-block.error h2,
+.toast-block.error .toast-icon {
+	color: var(--error-color)
+}
+.toast-block.info h2,
+.toast-block.info .toast-icon {
+	color: var(--info-color)
+}
+.toast-block.success::after {
+	content: "";
+	display: block;
+	height: 4px;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	border-radius: 4px;
+	background-color: var(--success-color);
+	animation: runOut 3s forwards linear;
+}
+.toast-block.error::after {
+	content: "";
+	display: block;
+	height: 4px;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	border-radius: 4px;
+	background-color: var(--error-color);
+	animation: runOut 3s forwards linear;
+}
+.toast-block.info::after {
+	content: "";
+	display: block;
+	height: 4px;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	border-radius: 4px;
+	background-color: var(--info-color);
+	animation: runOut 3s forwards linear;
+}
+@keyframes runOut {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+@keyframes slideIn {
+	0% {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0%);
+	}
+}
+
+.btn:hover {
+	opacity: 0.7;
+	transition: 0.3s;
+}
+.success-btn {
+	background-color: var(--success-color)
+}
+.error-btn {
+	background-color: var(--error-color)
+}
+.info-btn {
+	background-color: var(--info-color)
+}
