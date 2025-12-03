@@ -142,3 +142,11 @@ body {
 .info-btn {
 	background-color: var(--info-color)
 }
+@media (max-width: 739px) {
+body {
+    align-items: flex-end;
+}
+.option {
+	margin-bottom: 20px;
+}
+}
